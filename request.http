@@ -1,0 +1,153 @@
+
+### 
+POST http://localhost:3000/api/personaje HTTP/1.1
+Content-Type: application/json
+
+{
+"nombre":"Juan",
+"tipo":"no_jugable",
+"velocidad":10,
+"resistencia":20,
+"precision_disparo":10,
+"nivel":2
+}
+
+###
+GET http://localhost:3000/api/personaje HTTP/1.1
+###
+GET http://localhost:3000/api/personaje/Rata-S HTTP/1.1
+
+### 
+PUT http://localhost:3000/api/personaje/664ea4935d988919e2e0842d HTTP/1.1
+Content-Type: application/json
+
+
+{
+"nombre":"Perro_loco",
+"tipo":"no_jugable",
+"velocidad":30,
+"resistencia":12,
+"precision_disparo":40,
+"nivel":4
+}
+
+###
+DELETE  http://localhost:3000/api/personaje/664ea4935d988919e2e0842d HTTP/1.1
+
+
+
+
+
+
+### 
+POST http://localhost:3000/api/inventario HTTP/1.1
+Content-Type: application/json
+
+{
+"nombre":"Gafas-bua",
+"tipo":"recoleccion",
+"funcion": "permite ver en la oscuridad los sustos del bua bua"
+}
+###
+GET http://localhost:3000/api/inventario HTTP/1.1
+###
+GET http://localhost:3000/api/inventario/Gafas-bua HTTP/1.1
+### 
+PUT http://localhost:3000/api/inventario/665651d42bfa057756a33e12 HTTP/1.1
+Content-Type: application/json
+
+{
+"nombre":"Gafas-bua",
+"tipo":"recoleccion",
+"funcion": "permite ver en la oscuridad"
+}
+###
+DELETE  http://localhost:3000/api/inventario/665651d42bfa057756a33e12 HTTP/1.1
+
+
+
+
+
+
+### 
+POST http://localhost:3000/api/nivel HTTP/1.1
+Content-Type: application/json
+
+{
+"nombre":"Nivel_2",
+"descripcion":"niveles de prueba ",
+"enemigos":[
+    {"nombre": "rata-x", "cantidad": 10}
+],
+"objetos":[
+    {"nombre": "monedas", "cantidad": 2},
+    {"nombre": "gafas_vision", "cantidad": 1}
+]
+}
+###
+GET http://localhost:3000/api/nivel HTTP/1.1
+###
+GET http://localhost:3000/api/nivel/nivel-2 HTTP/1.1
+### 
+PUT http://localhost:3000/api/nivel/66565e6f523627089a1fa1d0 HTTP/1.1
+Content-Type: application/json
+
+{
+"nombre":"Nivel_2",
+"descripcion":"niveles de prueba 1 ",
+"enemigos":[
+    {"nombre": "rata-x", "cantidad": 10}
+],
+"objetos":[
+    {"nombre": "monedas", "cantidad": 3},
+    {"nombre": "gafas_vision", "cantidad": 2}
+]
+}
+###
+DELETE  http://localhost:3000/api/nivel/66565d479a53a65f9dfe9a01 HTTP/1.1
+
+
+
+
+
+
+
+### 
+POST http://localhost:3000/api/usuario HTTP/1.1
+Content-Type: application/json
+
+{
+"nombre":"Luchito",
+"edad":12,
+"personaje_selec":"Generala",
+"nivel_actual":2,
+"monedas": 23,
+"can_compras":2,
+"proviciones":[
+    {"nombre": "rifle", "cantidad": 1},
+    {"nombre": "gafas_vision", "cantidad": 1}
+]
+}
+###
+GET http://localhost:3000/api/usuario HTTP/1.1
+###
+GET http://localhost:3000/api/usuario/Luchito HTTP/1.1
+### 
+PUT http://localhost:3000/api/usuario/6656660c1efc5a3efacad857 HTTP/1.1
+Content-Type: application/json
+
+{
+"nombre":"Luchito",
+"edad":12,
+"personaje_selec":"Generala",
+"nivel_actual":3,
+"monedas": 10,
+"can_compras":2,
+"proviciones":[
+    {"nombre": "rifle", "cantidad": 1},
+    {"nombre": "gafas_vision", "cantidad": 1}
+]
+}
+###
+DELETE  http://localhost:3000/api/usuario/6656b8c836ad64d846b5c862 HTTP/1.1
+

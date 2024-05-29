@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Killer Rats</title>
+        <!-- Enlaces a hojas de estilos CSS, scripts JS, etc. -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="index.js" defer></script>
+
+    </head>
+
+
+    <body>
+        <header class="text-center py-4" >
+       <!-- Encabezado de la página  / menu de navegacion para cada coleccion --> 
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">KillerRats</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="nivel.html">Nivel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inventario.html">Inventario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="usuario.html">Usuario</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+        </header>
+      
+        <main class="container mt-2">  
+                <h2 class="text-center">PERSONAJES</h2>
+               <section>
+                <div class="row">
+                           <!-- formulario para crear personaje  --> 
+                <div class=" form_crear_personaje  col-md-6 mt-5 mb-4">
+                    <h4 >Crear personajes</h4>
+                        <form >
+                            <div class="form-group">
+                                <label for="nombre_P">Nombre:</label>
+                                <input type="text"  id="nombre_P" placeholder="ingrese nombre" required >
+                            </div>
+                            <div class="form-group">
+                                <label for="tipo_P">Tipo:</label>
+                                <select  id="tipo_P"  required >
+                                    <option value="jugable">Personaje Jugable</option>
+                                    <option value="no_jugable">Personaje Enemigo</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="velocidad_P">Velocidad:</label>
+                                <input type="number"  id="velocidad_P"  placeholder="ingrese velocidad" required >
+                            </div>
+                            <div class="form-group">
+                                <label for="resistencia_P">Resistencia:</label>
+                                <input type="number"  id="resistencia_P"  placeholder="ingrese resistencia" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="precision_disparo_P">Precision:</label>
+                                <input type="number"  id="precision_disparo_P"  placeholder="ingrese la precicion" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="recarga_vida_P">Recarga vida (personajes jugables):</label>
+                                <input type="number"  id="recarga_vida_P"  placeholder="ingrese la velocidad " >
+                            </div>
+                            <div class="form-group">
+                                <label for="historia_P">Historia (personajes jugables):</label>
+                                <textarea id="historia_P" class="form-control" rows="4" placeholder="Escribe la historia del personaje ..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="nivel_P">Nivel (personajes no jugables):</label>
+                                <input type="number"  id="nivel_P"  placeholder="ingrese el nivel " >
+                            </div>
+                            <button type="submit" id= "crear_P" class=" btn btn-primary">Crear</button>
+                        </form>
+                </div>
+
+                    <!-- formulario para ver  personaje  --> 
+                    <div class=" col-md-6 mt-5 mb-4">
+                    <form id="form_ver_personaje" >
+                    <h4>Ver Personajes</h4>
+                    <div id="auth-section" class="mb-3">
+                      <input type="text" id="nombre_V" class="form-control" placeholder="ingrese el nombre" >
+                      <button id="mostrar_P" class="btn btn-primary mt-2">Ver</button>
+                    </form>
+                    <div id="resultado" ></div>          
+                    </div>
+                    
+                </div>
+            </section>
+             <section>
+
+                <div class="row">
+
+                    <!-- formulario para eliminar personaje  --> 
+
+                  <div class="col-md-6 mt-5 mb-4">
+                    <form class=" form_eliminar_personaje  ">
+                        <h4>Eliminar personajes</h4>
+                        <div class="form-group">
+                            <label for="eliminar_id">Nombre:</label>
+                            <input type="text"  id="id" placeholder="ingrese el id" required >
+                        </div>
+                        <button type="submit" id="eliminar_P" class="  btn btn-primary">Eliminar</button>
+                    </form>
+                  </div>
+
+                       <!-- formulario para modifiar personaje  --> 
+
+                   <div class=" form_modifi_personaje  col-md-6 mt-5 mb-4">
+                    <h4 >Modificar personajes</h4>
+                        <form >
+                            <div class="form-group">
+                                <label for="id_M">Id:</label>
+                                <input type="text"  id="id_M" placeholder="ingrese el id" required >
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre_M">Nombre:</label>
+                                <input type="text"  id="nombre_M" placeholder="ingrese nombre" >
+                            </div>
+                            <div class="form-group">
+                                <label for="tipo_M">Tipo:</label>
+                                <select  id="tipo_M"  required >
+                                    <option value="jugable">Personaje Jugable</option>
+                                    <option value="no_jugable">Personaje Enemigo</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="velocidad_M">Velocidad:</label>
+                                <input type="number"  id="velocidad_M"  placeholder="ingrese velocidad" >
+                            </div>
+                            <div class="form-group">
+                                <label for="resistencia_M">Resistencia:</label>
+                                <input type="number"  id="resistencia_M"  placeholder="ingrese resistencia" >
+                            </div>
+                            <div class="form-group">
+                                <label for="precision_disparo_M">Precision:</label>
+                                <input type="number"  id="precision_disparo_M"  placeholder="ingrese la precicion" >
+                            </div>
+                            <div class="form-group">
+                                <label for="recarga_vida_M">Recarga vida (personajes jugables):</label>
+                                <input type="number"  id="recarga_vida_M"  placeholder="ingrese la velocidad " >
+                            </div>
+                            <div class="form-group">
+                                <label for="historia_M">Historia (personajes jugables):</label>
+                                <textarea id="historia_M" class="form-control" rows="4" placeholder="Escribe la historia del personaje ..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="nivel_M">Nivel (personajes no jugables):</label>
+                                <input type="number"  id="nivel_M"  placeholder="ingrese el nivel " >
+                            </div>
+                            <button type="submit" id="modificar_P" class="  btn btn-primary">Modificar</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="text-center py-4">
+            <!-- Pie de página -->
+            <p>Autor: Valentina Florez - Estudiante de Ingenieria multimedia </p>
+            <p>Curso: Bases de Datos Multimedia- UNAD &copy; 2024</p>
+        </footer>
+
+    </body>
+
+    
+ <!-- /////////////// estilos css ///////////////////////// -->
+
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; 
+    }
+    
+    /* estilo del encabezado */
+    header{
+        background-color: white;
+        padding-top: 15px; 
+        padding-bottom: 15px; 
+        font-family: 'Franklin Gothic Medium', sans-serif; 
+        color:#E90064; 
+    } 
+/* ------------------------------------------------------------------------------------------------- */
+
+
+    
+/* ------------------------------------------------------------------------------------------------- */
+
+    /* estilo del pie de pagina */
+    footer{
+        padding-left: 15px;
+        padding-top: 20px;
+        background-color:darkgrey;
+        
+    }
+
+</style>
+
+</html>
